@@ -1,7 +1,7 @@
 <template>
    <div id="app">
-    <Header v-bind:page="page"/>
-    <Main  />
+    <Header v-bind:page="page" @open="onOpen" />
+    <Main  v-bind:isOpen="isOpen" />
     <Footer />
   </div>
 </template>
@@ -15,15 +15,18 @@
     name: 'app',
     data() {
       return{
-        // sm_imgs: 1,
-        page: 1
+        page: 1,
+        isOpen: false
       }
-      },
-
-
-
-    components: {Header, Main, Footer}
-
+    },
+    components: {Header, Main, Footer},
+    
+    methods:{
+      onOpen(data){
+        this.isOpen = data.open;
+        
+      }
+    }
   }
 
 </script>

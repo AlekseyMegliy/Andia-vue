@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="slider col-sm-12 col-md-9"  id="slider">
                     <div class="big-slider " >
-                        <span class="slider-button-left" v-on:click="left"></span>
+                        <span class="slider-button-left" v-bind:class="{sliderButtinOpen: isOpen}" v-on:click="left"></span>
 
 
                         <transition  name="slider">
@@ -34,7 +34,7 @@
                         <p class=" slider-text  " v-if="sm_imgs==4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus spernatur repellendus minus error voluptatum nostrum velit, cupiditate architecto </p>
 
 
-                        <span class="slider-button-right" v-on:click="right"></span>
+                        <span class="slider-button-right" v-bind:class="{sliderButtinOpen: isOpen}" v-on:click="right"></span>
                     </div>
                     <div class="col-12 sm-imgs " id="sm-imgs">
                         <img class="col-3 sm-img" v-on:click="sm_imgs=1" src="../assets/img/slider/1.jpg">
@@ -209,6 +209,7 @@
 <script >
 
 export default{
+    props: ['isOpen'],
    data (){ 
     return{ 
     sm_imgs:1}},
@@ -290,6 +291,7 @@ export default{
 .slider-button-left{
     transition:
         left 0.5s ease-in 0s,
+        top 0.5s ease-in 0s,
         opacity 0.5s ease-in 0s,
         margin 0.5s linear;
     display: inline-block;
@@ -317,6 +319,7 @@ export default{
 .slider-button-right{
     transition:
         right 0.5s ease-in 0s,
+        top 0.5s ease-in 0s,
         opacity 0.5s ease-in 0s,
         margin 0.5s linear;
     display: inline-block;
@@ -501,6 +504,9 @@ export default{
 
 }
 
+.sliderButtinOpen{
+    top: 550px
+}
 
 .slider-enter-active, .slider-leave-active {
 

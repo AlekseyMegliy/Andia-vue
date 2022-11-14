@@ -1,11 +1,11 @@
 <template >
     
-    <div class="container " id="header">
+    <div class="container header " id="header"  v-bind:class="{buttonClick: open}">
         <div class="row">
             <a href="./index.html" class="col-3 col-sm-3 col-lg-2 offset-sm-1 offset-0 align-items-center logo">
                 <img class="col-10 col-sm-12" width="165px"  src="../assets/img/logo.png">
             </a>
-            <button class="offset-4 offset-sm-6 header-button" onclick="headerClick()"> 
+            <button class="offset-4 offset-sm-6 header-button" v-on:click="open = !open" @click="openfunc"> 
                 <svg>
                     <rect x="10" y="6" width="15" height="2"/>
                     <rect x="10" y="11" width="15" height="2"/>
@@ -45,11 +45,21 @@
 </template>
 <script>
 export default{
+    data (){
+        return{
+            open: false
+        }
+    },
+    methods: { 
+        openfunc(){ 
+            this.$emit('open', {open: this.open})
+           }
+    },
     props:['page']
 }
 </script>
 <style >
-    #header{
+.header{
     text-align: center;
     
 }
@@ -86,7 +96,7 @@ export default{
     box-shadow: inset #9d426b  0px  5px  0px 0px;
     
 }
-#header .logo{
+.header .logo{
     
     display: inline-block;
     width:165px;
@@ -104,7 +114,7 @@ export default{
   -webkit-filter:invert(100%); 
 }
 @media all and (max-width:991px ){
-    #header{
+    .header{
         height: 100px;
         overflow:hidden;
         transition: height 0.5s linear;
@@ -130,19 +140,19 @@ export default{
 
 } 
 @media all and (max-width:575px ){
-    #header .logo{
+    .header .logo{
         margin-bottom: 7%;
     }
 }
 @media all and (max-width:450px ){
-    #header .logo{
+    .header .logo{
         margin-bottom: 11%;
     }
 }
  .header-button:active{
     background-color: rgb(124, 58, 186);
 }
-.button-click{
+.buttonClick{
     height: 415px;
 } 
 </style>
