@@ -37,10 +37,10 @@
                         <span class="slider-button-right" v-bind:class="{sliderButtinOpen: isOpen}" v-on:click="right"></span>
                     </div>
                     <div class="col-12 sm-imgs " id="sm-imgs">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=1" src="../assets/img/slider/1.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=2" src="../assets/img/slider/2.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=3" src="../assets/img/slider/3.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=4" src="../assets/img/slider/4.jpg">
+                        <img class="col-3 sm-img" v-on:click="sm_imgs=1" v-bind:class="{sliderThisSimg: sm_imgs==1}" src="../assets/img/slider/1.jpg">
+                        <img class="col-3 sm-img" v-on:click="sm_imgs=2" v-bind:class="{sliderThisSimg: sm_imgs==2}" src="../assets/img/slider/2.jpg">
+                        <img class="col-3 sm-img" v-on:click="sm_imgs=3" v-bind:class="{sliderThisSimg: sm_imgs==3}" src="../assets/img/slider/3.jpg">
+                        <img class="col-3 sm-img" v-on:click="sm_imgs=4" v-bind:class="{sliderThisSimg: sm_imgs==4}" src="../assets/img/slider/4.jpg">
                     </div>
                 </div>
             </div>
@@ -355,12 +355,10 @@ export default{
     margin-left: auto;
     margin-right: auto;
     border: 5px solid white;
-    /* border-left: 5px solid white;
-    border-right: 5px solid white; */
+   
 }
 .sm-img{
     padding: 0;
-    /* margin-left: -5px; */
     opacity: 0.7;
 }
 .sm-img:first-child{
@@ -370,7 +368,7 @@ export default{
     opacity: 1;
     cursor:pointer;
 }
-.slider-this-simg{
+.sliderThisSimg{
     opacity: 1;
 }
 
