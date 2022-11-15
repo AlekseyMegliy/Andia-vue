@@ -150,7 +150,7 @@
         </div>
         <div class="row">
             <span class="col-1"></span>
-            <div class="testimonial testimonial-one testi-this col-9">
+            <div class="testimonial testimonial-one col-9" v-if="testim==1">
 
                 <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
@@ -161,7 +161,7 @@
 
             </div>
 
-            <div class="testimonial testimonial-two  col-9">
+            <div class="testimonial testimonial-two  col-9" v-if="testim==2">
 
                 <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
@@ -172,18 +172,18 @@
 
             </div>
 
-            <div class="testimonial testimonial-three col-9">
+            <div class="testimonial testimonial-three col-9" v-if="testim==3">
 
                 <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/3.png">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
-                    <p class="response">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita neque modi voluptatem. Molestiae, ex quod voluptates aliquam et, distinctio dignissimos, omnis qui repudiandae quaerat quos repellat sunt beatae doloremque!"</p>
+                    <p class="response">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita neque modi voluptatem. Molestiae, ex quod voluptates aliquam et, distinctio dignissimos, omnis qui repudiandae quaerat quos repellat sunt!"</p>
                     <p class="mail">expedita_neque_modi.uk</p>
                 </span>
 
             </div>
 
-            <div class="testimonial testimonial-four col-9">
+            <div class="testimonial testimonial-four col-9" v-if="testim==4">
 
                 <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/3.png">
 
@@ -196,10 +196,10 @@
         </div>
         <div class="testimonial-buttons row">
             <div class="testimonial-buttons col-3">
-                <input class="col-1 buttons buttons-this" onclick="testimonials()" type="button" id="testimonials">
-                <input class="col-1 buttons" onclick="testimonials()" type="button" id="testimonials">
-                <input class="col-1 buttons" onclick="testimonials()" type="button" id="testimonials">
-                <input class="col-1 buttons" onclick="testimonials()" type="button" id="testimonials">
+                <input class="col-1 buttons " v-on:click="testim=1" v-bind:class="{buttonsthis: testim==1}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=2" v-bind:class="{buttonsthis: testim==2}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=3" v-bind:class="{buttonsthis: testim==3}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=4" v-bind:class="{buttonsthis: testim==4}" type="button" id="testimonials">
             </div>
             <span class="col-2"></span>
         </div>
@@ -211,8 +211,12 @@
 export default{
     props: ['isOpen'],
    data (){ 
-    return{ 
-    sm_imgs:1}},
+        return{ 
+        sm_imgs:1,
+        testim:1, 
+        
+        }
+    },
    methods:{
         right(){
             if(this.sm_imgs != 4){
@@ -246,6 +250,7 @@ export default{
     overflow: hidden;
     padding: 5px;
 }
+
 .block-slider{
     background-color: rgb(240, 240, 240);
     box-shadow: inset rgb(177, 177, 177) 0px 0px 7px 0px;
@@ -737,12 +742,8 @@ export default{
     align-self:flex-start;
     color:#9d426b;
 }
-.testimonial{
-    display: none;
-}
-.testi-this{
-    display: inline-block;
-}
+
+
 .testimonial-buttons{
     display: flex;
     justify-content: flex-end;
@@ -754,7 +755,7 @@ export default{
     height: 50%;
     margin: 2px;
 }
-.testimonial-buttons .buttons-this{
+.testimonial-buttons .buttonsthis{
     background-color: #9d426b;
 }
 </style>
