@@ -2,9 +2,9 @@
     
     <div class="container header " id="header"  v-bind:class="{buttonClick: open}">
         <div class="row">
-            <a href="./index.html" class="col-3 col-sm-3 col-lg-2 offset-sm-1 offset-0 align-items-center logo">
+            <router-link  to="/" class="col-3 col-sm-3 col-lg-2 offset-sm-1 offset-0 align-items-center logo">
                 <img class="col-10 col-sm-12" width="165px"  src="../assets/img/logo.png">
-            </a>
+            </router-link>
             <button class="offset-4 offset-sm-6 header-button" v-on:click="open = !open" @click="openfunc"> 
                 <svg>
                     <rect x="10" y="6" width="15" height="2"/>
@@ -13,14 +13,14 @@
                 </svg>
             </button>
             <div class="col-sm-11 offset-sm-1 col-lg-5 col-xl-5 offset-lg-2 offset-xl-3 nav">
-                <a href="./index.html" v-bind:class="{current: page==1}">
+                <router-link  to="/" v-bind:class="{current: page==1}">
                     <img src="../assets/ico//home-sm.png">
                     <p>HOME</p>
-                </a>
-                <a href="#">
+                </router-link>
+                <router-link  to="/portfolio">
                     <img src="../assets/ico/portfolio-sm.png">
                     <p>PORTFOLIO</p>
-                </a>
+                </router-link>
                 <a href="#">
                     <img src="../assets/ico/blog-sm.png">
                     <p>BLOG</p>
@@ -43,7 +43,25 @@
     </div>
     
 </template>
-<script>
+<script >
+//   import Home from "@/pages/HomePage.vue";
+//   import Portfolio from "@/pages/PortfolioPage.vue";
+//   import VueRouter from 'vue-router'
+//   import { createApp } from 'vue'
+// const routes = [
+//   { path: '/', component: Home },
+//   { path: '/portfolio', component: Portfolio },
+// ]
+// const router = VueRouter.createRouter({
+  
+//   history: VueRouter.createWebHashHistory(),
+//   routes, 
+// })
+// const app = createApp({})
+// app.use(router)
+
+// app.mount('#app')
+
 export default{
     data (){
         return{
