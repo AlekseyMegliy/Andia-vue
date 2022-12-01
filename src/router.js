@@ -1,19 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '@/pages/HomePage'
+import {createRouter, createWebHashHistory} from 'vue-router'
+import HomePage from "./pages/HomePage.vue"
+import PortfolioPage from "./pages/PortfolioPage.vue"
 
-Vue.use(Router)
 
-export default new Router({
-    mode: 'history',
-    routes: [{
-        path: '/',
-        component: Home 
-    },
-    {
-        path: '/portfolio',
-        component: () => import('@/pages/PortfolioPage.vue')
-    }
+
+export default createRouter({
+    history: createWebHashHistory(),
+    routes: [
+        {path: '/home', component: HomePage, alias: '/'},
+        {path: '/portfolio', component: PortfolioPage}
 
     ]
 })
