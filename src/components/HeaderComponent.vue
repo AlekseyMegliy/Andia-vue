@@ -21,22 +21,22 @@
                     <img src="../assets/ico/portfolio-sm.png">
                     <p>PORTFOLIO</p>
                 </router-link>
-                <a href="#">
+                <router-link  to="/">
                     <img src="../assets/ico/blog-sm.png">
                     <p>BLOG</p>
-                </a>
-                <a href="#">
+                </router-link>
+                <router-link  to="/">
                     <img src="../assets/ico/services-sm.png">
                     <p>SERVICES</p>
-                </a>
-                <a href="#">
+                </router-link>
+                <router-link  to="/">
                     <img src="../assets/ico/about-sm.png">
                     <p>ABOUT</p>
-                </a>
-                <a href="#">
+                </router-link>
+                <router-link  to="/">
                     <img src="../assets/ico/contact-sm.png">
                     <p>CONTACT</p>
-                </a>
+                </router-link>
             </div>
             <span class="col-1"></span>
         </div>
@@ -44,23 +44,6 @@
     
 </template>
 <script >
-//   import Home from "@/pages/HomePage.vue";
-//   import Portfolio from "@/pages/PortfolioPage.vue";
-//   import VueRouter from 'vue-router'
-//   import { createApp } from 'vue'
-// const routes = [
-//   { path: '/', component: Home },
-//   { path: '/portfolio', component: Portfolio },
-// ]
-// const router = VueRouter.createRouter({
-  
-//   history: VueRouter.createWebHashHistory(),
-//   routes, 
-// })
-// const app = createApp({})
-// app.use(router)
-
-// app.mount('#app')
 
 export default{
     data (){

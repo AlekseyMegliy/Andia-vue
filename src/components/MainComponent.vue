@@ -106,7 +106,7 @@
                         <h4>BEAUTIFUL WEBSITES</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                         <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <a href="#"><img class="col-10" src="../assets/ico/link2.png"></a>
+                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
 
@@ -116,7 +116,7 @@
                         <h4>RESPONSIVE LAYOUT</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                         <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <a href="#"><img class="col-10" src="../assets/ico/link2.png"></a>
+                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
 
@@ -126,7 +126,7 @@
                         <h4>AWESOME LOGOS</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                         <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <a href="#"><img class="col-10" src="../assets/ico/link2.png"></a>
+                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
 
@@ -136,7 +136,7 @@
                         <h4>HIGH RES PRINTS</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
                         <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <a href="#"><img class="col-10" src="../assets/ico/link2.png"></a>
+                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
             </div>
