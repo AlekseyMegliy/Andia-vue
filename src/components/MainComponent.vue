@@ -152,7 +152,7 @@
             <span class="col-1"></span>
             <div class="testimonial testimonial-one col-9" v-if="testim==1">
 
-                <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+                <img class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae possimus tempora ab obcaecati fuga atque esse! Similique illum, tempora, hic cumque vitae debitis delectus, molestiae cupiditate praesentium illo ea eligendi."</p>
@@ -163,7 +163,7 @@
 
             <div class="testimonial testimonial-two  col-9" v-if="testim==2">
 
-                <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+                <img class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, in rem? Molestias perferendis veritatis, eos perspiciatis, natus esse nihil molestiae a ipsam quo odit facere quis praesentium, porro iste doloribus?"</p>
@@ -174,7 +174,7 @@
 
             <div class="testimonial testimonial-three col-9" v-if="testim==3">
 
-                <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/3.png">
+                <img class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita neque modi voluptatem. Molestiae, ex quod voluptates aliquam et, distinctio dignissimos, omnis qui repudiandae quaerat quos repellat sunt!"</p>
@@ -185,7 +185,7 @@
 
             <div class="testimonial testimonial-four col-9" v-if="testim==4">
 
-                <img class="col-sm-2 col-md-1" src="../assets/img/testimonials/3.png">
+                <img class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem commodi cumque eos non quas sunt culpa nostrum, obcaecati, recusandae dolorum ipsam accusamus nisi alias quo laborum nam fugit aspernatur est."</p>
@@ -667,6 +667,7 @@ export default{
     display: inline-block;
     text-align: center;
     vertical-align: middle;
+    margin: 0 3px;
 }
 .latest a img{
     filter: invert(100%);

@@ -17,23 +17,23 @@
                     <img src="../assets/ico//home-sm.png">
                     <p>HOME</p>
                 </router-link>
-                <router-link  to="/portfolio">
+                <router-link  to="/portfolio" v-bind:class="{current: page==2}">
                     <img src="../assets/ico/portfolio-sm.png">
                     <p>PORTFOLIO</p>
                 </router-link>
-                <router-link  to="/">
+                <router-link  to="/" v-bind:class="{current: page==3}">
                     <img src="../assets/ico/blog-sm.png">
                     <p>BLOG</p>
                 </router-link>
-                <router-link  to="/">
+                <router-link  to="/"  v-bind:class="{current: page==4}">
                     <img src="../assets/ico/services-sm.png">
                     <p>SERVICES</p>
                 </router-link>
-                <router-link  to="/">
+                <router-link  to="/"  v-bind:class="{current: page==5}">
                     <img src="../assets/ico/about-sm.png">
                     <p>ABOUT</p>
                 </router-link>
-                <router-link  to="/">
+                <router-link  to="/"  v-bind:class="{current: page==6}">
                     <img src="../assets/ico/contact-sm.png">
                     <p>CONTACT</p>
                 </router-link>
