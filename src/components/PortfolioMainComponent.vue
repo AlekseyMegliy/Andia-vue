@@ -15,137 +15,154 @@
             <div class="container">
                 <div class="row">
                     <span class="offset-sm-1 offset-0 col-10 portfolio-filter">
-                        <p class="portfolio-button-this">All / </p>
-                        <p>WEB DESIGN / </p>
-                        <p>LOGO DESIGN / </p>
-                        <p>PRINT DESIGN </p>
+                        <p v-on:click="(web=true, logo=true, print=true)" v-bind:class="{portfolioButtonThis: web&&logo}" >All / </p>
+                        <p v-on:click="(web=true, logo=false, print=false)" v-bind:class="{portfolioButtonThis: web&&!logo}">WEB DESIGN / </p>
+                        <p v-on:click="(web=false, logo=true, print=false)" v-bind:class="{portfolioButtonThis: logo&&!print}">LOGO DESIGN / </p>
+                        <p v-on:click="(web=false, logo=false, print=true)" v-bind:class="{portfolioButtonThis: print&&!web}">PRINT DESIGN </p>
                     </span>
                 </div>
                 
                     
                     <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work1.jpg">
-                                <h4>Lorem WEBSITE</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work1.jpg">
+                                    <h4>Lorem WEBSITE</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
                             </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work2.jpg">
-                                <h4>ipsum LOGO</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>  
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work3.jpg">
-                                <h4>dolor PRINT</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work"  v-if="logo">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work2.jpg">
+                                    <h4>ipsum LOGO</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>  
                             </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work4.jpg">
-                                <h4>sit WEBSITE</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                            
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work3.jpg">
+                                    <h4>dolor PRINT</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
                             </div>
-                        </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work4.jpg">
+                                    <h4>sit WEBSITE</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work5.jpg">
+                                    <h4>amet logo</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work6.jpg">
+                                    <h4>consectetur print</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>  
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work7.jpg">
+                                    <h4>adipisicing WEBSITE</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work8.jpg">
+                                    <h4>elit logo</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work9.jpg">
+                                    <h4>Perspiciatis WEBSITE</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work10.jpg">
+                                    <h4>eius logo</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>  
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work11.jpg">
+                                    <h4>eum print</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
+                                
+                                </div>
+                            </div>
+                        </transition>
+                        <transition  name="filter">
+                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
+                                <div>
+                                    <img class="col-12" src="../assets/img/portfolio/work12.jpg">
+                                    <h4>Lorem WEBSITE</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
+                                
+                                </div>
+                            </div>
+                        </transition>
                     </div>
-                    
-                
-                    <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work5.jpg">
-                                <h4>amet logo</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work6.jpg">
-                                <h4>consectetur print</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>  
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work7.jpg">
-                                <h4>adipisicing WEBSITE</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work8.jpg">
-                                <h4>elit logo</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work9.jpg">
-                                <h4>Perspiciatis WEBSITE</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work10.jpg">
-                                <h4>eius logo</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>  
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work11.jpg">
-                                <h4>eum print</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                            
-                            </div>
-                        </div>
-        
-                        <div class="col-sm-12 col-md-3 portf-work">
-                            <div>
-                                <img class="col-12" src="../assets/img/portfolio/work12.jpg">
-                                <h4>Lorem WEBSITE</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-
-                    
             </div>
         </div>
     </div>
 </template>
 
 <script>
+export default{
+    
+   data (){ 
+        return{ 
+            
+            web: true,
+            logo: true,
+            print: true
 
+        }
+    }
+}
 </script>
 
 <style>
@@ -171,7 +188,7 @@
     margin-top:auto;
     margin-bottom:auto;
     font-family: 'Lobster', cursive;
-    
+    overflow: hidden;
 
 }
 .plate .plate-italic{
@@ -225,7 +242,7 @@
     cursor: pointer;
  
 }
-.portfolio .portfolio-filter .portfolio-button-this{
+.portfolio .portfolio-filter .portfolioButtonThis{
     color: #9d426b;
 }
 .portfolio .portfolio-filter p:hover{
@@ -285,6 +302,17 @@
         font-size: 1em;
    }
    
+}
+
+.filter-enter-active, .filter-leave-active {
+height: 100px;
+transition: width linear 0.5s,
+opacity  linear 0.5s;
+
+}
+.filter-enter-from, .filter-leave-to  {
+width: 1%;
+opacity: 0;
 }
 
 </style>

@@ -730,7 +730,7 @@ export default{
 .latest div:hover{
     box-shadow: inset black 0px 0px 25px -15px;
 }
-{}
+
 .block-latest .zoom{
     position: fixed;
     padding: 10px;
