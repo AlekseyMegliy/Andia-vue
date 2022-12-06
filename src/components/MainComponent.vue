@@ -105,7 +105,7 @@
                         <img class="col-12" src="../assets/img/slider/1.jpg">
                         <h4>BEAUTIFUL WEBSITES</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
+                        <a v-on:click="(zoom=1)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                         <img class="col-12" src="../assets/img/slider/2.jpg">
                         <h4>RESPONSIVE LAYOUT</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
+                        <a v-on:click="(zoom=2)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                         <img class="col-12" src="../assets/img/slider/3.jpg">
                         <h4>AWESOME LOGOS</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
+                        <a v-on:click="(zoom=3)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
@@ -135,10 +135,59 @@
                         <img class="col-12" src="../assets/img/slider/4.jpg">
                         <h4>HIGH RES PRINTS</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                        <a href="#"><img class="col-10" src="../assets/ico/zoom2.png"></a>
+                        <a v-on:click="(zoom=4)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
                 </div>
+                <transition  name="zoom">
+                    <div class="col-8 zoom"  v-if="(zoom==1)">
+                        <img  class="col-12" src="../assets/img/slider/1.jpg">
+                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
+                            <svg>
+                                <rect x="10" y="6" width="17" height="3"/>
+                                <rect x="10" y="6" width="17" height="3"/>
+                            </svg>
+                        </span>
+                    </div>        
+                    
+                </transition>
+
+                <transition  name="zoom">
+                    <div class="col-8 zoom" v-if="(zoom==2)">
+                        <img  class="col-12" src="../assets/img/slider/2.jpg">
+                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
+                            <svg>
+                                <rect x="10" y="6" width="17" height="3"/>
+                                <rect x="10" y="6" width="17" height="3"/>
+                            </svg>
+                        </span>
+                    </div>  
+                </transition>
+
+                <transition  name="zoom">
+                    <div class="col-8 zoom"  v-if="(zoom==3)">
+                        <img  class="col-12" src="../assets/img/slider/3.jpg">
+                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
+                            <svg>
+                                <rect x="10" y="6" width="17" height="3"/>
+                                <rect x="10" y="6" width="17" height="3"/>
+                            </svg>
+                        </span>
+                    </div>  
+                </transition>
+
+                <transition  name="zoom">
+                    <div class="col-8 zoom" v-if="(zoom==4)">
+                        <img  class="col-12" src="../assets/img/slider/4.jpg">
+                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
+                            <svg>
+                                <rect x="10" y="6" width="17" height="3"/>
+                                <rect x="10" y="6" width="17" height="3"/>
+                            </svg>
+                        </span>
+                    </div>  
+                </transition>
+                <div v-bind:class="{backdrop: zoom}" ></div>
             </div>
             <span class="col-sm-5 col-md-1 "></span>
         </div>
@@ -214,7 +263,7 @@ export default{
         return{ 
         sm_imgs:1,
         testim:1, 
-        
+        zoom:0
         }
     },
    methods:{
@@ -668,6 +717,11 @@ export default{
     text-align: center;
     vertical-align: middle;
     margin: 0 3px;
+    cursor: pointer;
+    transition:background-color linear 0.2s ;
+}
+.latest a:hover{
+    background-color:rgba(0, 0, 0, 0.632);
 }
 .latest a img{
     filter: invert(100%);
@@ -675,6 +729,61 @@ export default{
 }
 .latest div:hover{
     box-shadow: inset black 0px 0px 25px -15px;
+}
+{}
+.block-latest .zoom{
+    position: fixed;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: black 0px 0px 5px 0px;
+    z-index: 5;
+    text-align: end;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.block-latest .remove-zoom svg{
+    padding: 0;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: black 0px 0px 1px 0px;
+    fill: #454545;
+    cursor: pointer;
+}
+.block-latest .remove-zoom svg:hover{
+    fill: #00000086;
+}
+.block-latest .remove-zoom rect:first-of-type{
+    transform: rotate(45deg) translate(-20%,-36%);
+    
+}
+.block-latest .remove-zoom rect:last-of-type{
+    transform:translate(140%, 14%) rotate(135deg) ;
+}
+
+.zoom-enter-active, .zoom-leave-active {
+
+transition: width ease-in-out 0.7s;
+
+}
+.zoom-enter-from, .zoom-leave-to  {
+width: 20%;
+
 }
 @media all and (max-width:1200px ){
     .latest h4{
