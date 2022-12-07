@@ -728,6 +728,7 @@ export default{
   -webkit-filter:invert(100%);
 }
 .latest div:hover{
+    opacity: 0.7;
     box-shadow: inset black 0px 0px 25px -15px;
 }
 
