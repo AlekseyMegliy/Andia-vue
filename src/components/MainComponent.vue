@@ -53,7 +53,12 @@
         <div class="row">
             <span class="col-sm-0 col-md-1 "></span>
             <div class="row col-sm-12 col-md-10">
-                <div class="col-sm-12 col-md-3 benefits">
+                <Benefit
+                v-for="item in benefitInfos"
+                v-bind:benefitInfo="item"
+                v-bind:key="item.id"
+                ></Benefit>
+                <!-- <div class="col-sm-12 col-md-3 benefits">
                     <div>
                         <img class="col-2 col-sm-1 col-md-4  col-lg-3" src="../assets/ico/eye.png">
                         <h4>BEAUTIFUL WEBSITES</h4>
@@ -87,7 +92,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
                         <a href="#">Read more</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <span class="col-sm-5 col-md-1 "></span>
         </div>
@@ -256,17 +261,24 @@
     </div>
 </template>
 <script >
-
+import Benefit from "@/components/BenefitComponent.vue";
 export default{
     props: ['isOpen'],
    data (){ 
         return{ 
         sm_imgs:1,
         testim:1, 
-        zoom:0
+        zoom:0,
+        benefitInfos: [
+            {id:1, imgSrc: 'eye', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+            {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+            {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+            {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
+        ]
         }
     },
-   methods:{
+    components: {Benefit},
+    methods:{
         right(){
             if(this.sm_imgs != 4){
                 this.sm_imgs +=1;
