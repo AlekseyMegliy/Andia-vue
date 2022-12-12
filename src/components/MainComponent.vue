@@ -57,42 +57,9 @@
                 v-for="item in benefitInfos"
                 v-bind:benefitInfo="item"
                 v-bind:key="item.id"
+                v-bind:benHref="benHref"
                 ></Benefit>
-                <!-- <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4  col-lg-3" src="../assets/ico/eye.png">
-                        <h4>BEAUTIFUL WEBSITES</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="../assets/ico/layout.png">
-                        <h4>RESPONSIVE LAYOUT</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="../assets/ico/awesome.png">
-                        <h4>AWESOME LOGOS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="../assets/ico/print.png">
-                        <h4>HIGH RES PRINTS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                        <a href="#">Read more</a>
-                    </div>
-                </div> -->
+               
             </div>
             <span class="col-sm-5 col-md-1 "></span>
         </div>
@@ -269,6 +236,7 @@ export default{
         sm_imgs:1,
         testim:1, 
         zoom:0,
+        benHref: true, 
         benefitInfos: [
             {id:1, imgSrc: 'eye', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
             {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},

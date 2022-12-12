@@ -25,7 +25,7 @@
                     <img src="../assets/ico/blog-sm.png">
                     <p>BLOG</p>
                 </router-link>
-                <router-link  to="/"  v-bind:class="{current: page==4}">
+                <router-link  to="/services"  v-bind:class="{current: page==4}">
                     <img src="../assets/ico/services-sm.png">
                     <p>SERVICES</p>
                 </router-link>
@@ -82,7 +82,7 @@ export default{
     margin-bottom: 20px;
 }
 .nav a img{
-    opacity: 0.5;
+    opacity: 0.3;
 }
 .nav a{
    
