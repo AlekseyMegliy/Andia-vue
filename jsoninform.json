@@ -1,0 +1,9 @@
+
+{
+"benefitInfos": {
+    "1": {"id":1, "imgSrc": "eye", "header": "BEAUTIFUL WEBSITES", "mainText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et..."},
+    "2": {"id":2, "imgSrc": "layout", "header": "RESPONSIVE LAYOUT", "mainText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et..."},
+    "3": {"id":3, "imgSrc": "awesome", "header": "AWESOME LOGOS", "mainText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et..."},
+    "4": {"id":4, "imgSrc": "print", "header": "HIGH RES PRINTS", "mainText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et..."}
+}
+}

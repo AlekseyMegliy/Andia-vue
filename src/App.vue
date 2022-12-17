@@ -4,37 +4,30 @@
     <Main  v-bind:isOpen="isOpen" />
     <Footer /> -->
     <!-- <Home /> -->
-    
+    <div id="app">
+  {{ info}}
+</div>
     <RouterView></RouterView>
   </div>
 </template>
 <script>
+  // import axios from 'axios'
+  
+// import { info } from 'json';
 
-  // import Home from "@/pages/HomePage.vue";
-  // import Portfolio from "@/pages/PortfolioPage.vue";
-  export default {
-  // name: 'app',
-  // components: {Home}}
-  //  import Header from "@/components/HeaderComponent.vue";
-  //  import Main from "@/components/MainComponent.vue";
-  //  import Footer from "@/components/FooterComponent.vue";
-  //  export default {
- 
-  //    name: 'app',
-  //    data() {
-  //      return{
-  //        page: 1,
-  //        isOpen: false
-  //      }
-  //    },
-  //    components: {Header, Main, Footer},
-     
-  //    methods:{
-  //      onOpen(data){
-  //        this.isOpen = data.open;
-         
-  //      }
-  //    }
+ import jsonData from '../jsoninform.json' 
+//  let parsejson = JSON.stringify(jsonData)
+//  alert(parsejson)
+ export default {
+    data() {
+      return {
+        info:jsonData
+        
+      }
+    },
+    mounted(){
+      // axios.get('https://api.coindesk.com/v1/bpi/currentprice.json').then(response => (this.info = JSON.parse(response))); 
+    }
   }
  
 </script>
