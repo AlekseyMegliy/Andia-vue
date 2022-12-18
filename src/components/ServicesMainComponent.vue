@@ -108,6 +108,7 @@
 
 <script>
 import Benefit from "@/components/BenefitComponent.vue";
+import jsonData from '../../jsoninform.json' 
 export default{
     props: ['isOpen'],
    data (){ 
@@ -116,12 +117,13 @@ export default{
         testim:1, 
         zoom:0,
         benHref: false, 
-        benefitInfos: [
-            {id:1, imgSrc: 'eye', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
-        ]
+        benefitInfos:jsonData.benefitInfos,
+        // benefitInfos: [
+        //     {id:1, imgSrc: 'eye', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+        //     {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+        //     {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+        //     {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
+        // ]
         }
     },
     components: {Benefit}

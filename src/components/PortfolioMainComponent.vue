@@ -24,10 +24,21 @@
                 
                     
                     <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
-                        <transition  name="filter">
+                        
+                            <Work @zoom="zoomer"
+                                v-for="item in worksinfo"
+                                v-bind:worksinfo="item"
+                                v-bind:key="item.id"
+                                v-bind:benHref="benHref"
+                                :web ="web"
+                                :logo="logo"
+                                :print="print"  />
+                        
+                        
+                        <!-- <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="web">
                                 <div>
-                                    <img v-on:click="(filterZoom=1)" class="col-12" src="../assets/img/portfolio/work1.jpg">
+                                    <img v-on:click="(zoom=1)" class="col-12" src="../assets/img/portfolio/work1.jpg">
                                     <h4>Lorem WEBSITE</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -37,7 +48,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work"  v-if="logo">
                                 <div>
-                                    <img v-on:click="(filterZoom=2)" class="col-12" src="../assets/img/portfolio/work2.jpg">
+                                    <img v-on:click="(zoom=2)" class="col-12" src="../assets/img/portfolio/work2.jpg">
                                     <h4>ipsum LOGO</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -47,7 +58,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="print">
                                 <div>
-                                    <img v-on:click="(filterZoom=3)" class="col-12" src="../assets/img/portfolio/work3.jpg">
+                                    <img v-on:click="(zoom=3)" class="col-12" src="../assets/img/portfolio/work3.jpg">
                                     <h4>dolor PRINT</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -57,7 +68,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="web">
                                 <div>
-                                    <img v-on:click="(filterZoom=4)" class="col-12" src="../assets/img/portfolio/work4.jpg">
+                                    <img v-on:click="(zoom=4)" class="col-12" src="../assets/img/portfolio/work4.jpg">
                                     <h4>sit WEBSITE</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
                                 
@@ -67,7 +78,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
                                 <div>
-                                    <img  v-on:click="(filterZoom=5)" class="col-12" src="../assets/img/portfolio/work5.jpg">
+                                    <img  v-on:click="(zoom=5)" class="col-12" src="../assets/img/portfolio/work5.jpg">
                                     <h4>amet logo</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -77,7 +88,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="print">
                                 <div>
-                                    <img v-on:click="(filterZoom=6)" class="col-12" src="../assets/img/portfolio/work6.jpg">
+                                    <img v-on:click="(zoom=6)" class="col-12" src="../assets/img/portfolio/work6.jpg">
                                     <h4>consectetur print</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -87,7 +98,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="web">
                                 <div>
-                                    <img v-on:click="(filterZoom=7)" class="col-12" src="../assets/img/portfolio/work7.jpg">
+                                    <img v-on:click="(zoom=7)" class="col-12" src="../assets/img/portfolio/work7.jpg">
                                     <h4>adipisicing WEBSITE</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -97,7 +108,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
                                 <div>
-                                    <img v-on:click="(filterZoom=8)" class="col-12" src="../assets/img/portfolio/work8.jpg">
+                                    <img v-on:click="(zoom=8)" class="col-12" src="../assets/img/portfolio/work8.jpg">
                                     <h4>elit logo</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
                                 
@@ -107,7 +118,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="web">
                                 <div>
-                                    <img v-on:click="(filterZoom=9)" class="col-12" src="../assets/img/portfolio/work9.jpg">
+                                    <img v-on:click="(zoom=9)" class="col-12" src="../assets/img/portfolio/work9.jpg">
                                     <h4>Perspiciatis WEBSITE</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -117,7 +128,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
                                 <div>
-                                    <img v-on:click="(filterZoom=10)" class="col-12" src="../assets/img/portfolio/work10.jpg">
+                                    <img v-on:click="(zoom=10)" class="col-12" src="../assets/img/portfolio/work10.jpg">
                                     <h4>eius logo</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -127,7 +138,7 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="print">
                                 <div>
-                                    <img v-on:click="(filterZoom=11)" class="col-12" src="../assets/img/portfolio/work11.jpg">
+                                    <img v-on:click="(zoom=11)" class="col-12" src="../assets/img/portfolio/work11.jpg">
                                     <h4>eum print</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
                                 
@@ -137,19 +148,19 @@
                         <transition  name="filter">
                             <div class="col-sm-12 col-md-3 portf-work" v-if="web">
                                 <div>
-                                    <img v-on:click="(filterZoom=12)" class="col-12" src="../assets/img/portfolio/work12.jpg">
+                                    <img v-on:click="(zoom=12)" class="col-12" src="../assets/img/portfolio/work12.jpg">
                                     <h4>Lorem WEBSITE</h4>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
                                 
                                 </div>
                             </div>
-                        </transition>
+                        </transition> -->
                     </div>
 
                     <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom"  v-if="(filterZoom==1)">
+                    <div class="col-8 filter-zoom"  v-if="(zoom==1)">
                         <img  class="col-12" src="../assets/img/portfolio/work1.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -160,9 +171,9 @@
                 </transition>
 
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==2)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==2)">
                         <img  class="col-12" src="../assets/img/portfolio/work2.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -172,9 +183,9 @@
                 </transition>
 
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom"  v-if="(filterZoom==3)">
+                    <div class="col-8 filter-zoom"  v-if="(zoom==3)">
                         <img  class="col-12" src="../assets/img/portfolio/work3.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -184,9 +195,9 @@
                 </transition>
 
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==4)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==4)">
                         <img  class="col-12" src="../assets/img/portfolio/work4.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -195,9 +206,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==5)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==5)">
                         <img  class="col-12" src="../assets/img/portfolio/work5.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -206,9 +217,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==6)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==6)">
                         <img  class="col-12" src="../assets/img/portfolio/work6.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -217,9 +228,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==7)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==7)">
                         <img  class="col-12" src="../assets/img/portfolio/work7.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -228,9 +239,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==8)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==8)">
                         <img  class="col-12" src="../assets/img/portfolio/work8.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -239,9 +250,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==9)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==9)">
                         <img  class="col-12" src="../assets/img/portfolio/work9.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -250,9 +261,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==10)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==10)">
                         <img  class="col-12" src="../assets/img/portfolio/work10.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -261,9 +272,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==11)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==11)">
                         <img  class="col-12" src="../assets/img/portfolio/work11.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -272,9 +283,9 @@
                     </div>  
                 </transition>
                 <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(filterZoom==12)">
+                    <div class="col-8 filter-zoom" v-if="(zoom==12)">
                         <img  class="col-12" src="../assets/img/portfolio/work12.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="filterZoom=0">
+                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
                             <svg>
                                 <rect x="10" y="6" width="17" height="3"/>
                                 <rect x="10" y="6" width="17" height="3"/>
@@ -282,24 +293,35 @@
                         </span>
                     </div>  
                 </transition>
-                <div v-bind:class="{backdrop: filterZoom}" ></div>
+                <div v-bind:class="{backdrop: zoom}" ></div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Work from "@/components/WorksComponent.vue"
+import jsonData from '../../jsoninform.json' 
 export default{
     
    data (){ 
         return{ 
-            filterZoom: 0,
+            zoom: 0,
             web: true,
             logo: true,
-            print: true
+            print: true,
+            benHref: false, 
+            worksinfo: jsonData.worksinfo
+
 
         }
-    }
+    },
+    methods: {
+        zoomer(data){
+            this.zoom = data.zoom
+        }
+    },
+    components: {Work},
 }
 </script>
 

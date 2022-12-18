@@ -72,7 +72,14 @@
         <div class="row">
             <span class="col-sm-0 col-md-1 "></span>
             <div class="row col-sm-12 col-md-10">
-                <div class="col-sm-12 col-md-3 latest">
+
+                <Work @zoom="zoomer"
+                    
+                    v-for="item in worksinfo"
+                    v-bind:worksinfo="item"
+                    v-bind:key="item.id"
+                    v-bind:benHref="benHref"  />
+                <!-- <div class="col-sm-12 col-md-3 latest">
                     <div>
                         <img class="col-12" src="../assets/img/slider/1.jpg">
                         <h4>BEAUTIFUL WEBSITES</h4>
@@ -80,9 +87,10 @@
                         <a v-on:click="(zoom=1)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
-                </div>
+                </div> -->
+                
 
-                <div class="col-sm-12 col-md-3 latest">
+                <!-- <div class="col-sm-12 col-md-3 latest">
                     <div>
                         <img class="col-12" src="../assets/img/slider/2.jpg">
                         <h4>RESPONSIVE LAYOUT</h4>
@@ -110,7 +118,7 @@
                         <a v-on:click="(zoom=4)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
                         <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
                     </div>
-                </div>
+                </div> -->
                 <transition  name="zoom">
                     <div class="col-8 zoom"  v-if="(zoom==1)">
                         <img  class="col-12" src="../assets/img/slider/1.jpg">
@@ -229,6 +237,8 @@
 </template>
 <script >
 import Benefit from "@/components/BenefitComponent.vue";
+import Work from "@/components/WorksComponent.vue"
+import jsonData from '../../jsoninform.json' 
 export default{
     props: ['isOpen'],
    data (){ 
@@ -237,15 +247,17 @@ export default{
         testim:1, 
         zoom:0,
         benHref: true, 
-        benefitInfos: [
-            {id:1, imgSrc: 'eye', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
-        ]
+        benefitInfos:jsonData.benefitInfos,
+        worksinfo: jsonData.worksinfo
+        // worksinfo: [
+        //     {id:1, type: 'web', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.'}
+            // {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+            // {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
+            // {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
+        // ]
         }
     },
-    components: {Benefit},
+    components: {Benefit, Work},
     methods:{
         right(){
             if(this.sm_imgs != 4){
@@ -262,6 +274,9 @@ export default{
                 this.sm_imgs=4
             }
 
+        },
+        zoomer(data){
+            this.zoom = data.zoom
         }
 
 

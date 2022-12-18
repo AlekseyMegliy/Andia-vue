@@ -5,7 +5,7 @@
             <router-link  to="/" class="col-3 col-sm-3 col-lg-2 offset-sm-1 offset-0 align-items-center logo">
                 <img class="col-10 col-sm-12" width="165px"  src="../assets/img/logo.png">
             </router-link>
-            <button class="offset-4 offset-sm-6 header-button" v-on:click="open = !open" @click="openfunc"> 
+            <button class="offset-4 offset-sm-6 header-button" v-on:click="open = !open" @click="this.$emit('open', {open: this.open})"> 
                 <svg>
                     <rect x="10" y="6" width="15" height="2"/>
                     <rect x="10" y="11" width="15" height="2"/>
@@ -50,11 +50,6 @@ export default{
         return{
             open: false
         }
-    },
-    methods: { 
-        openfunc(){ 
-            this.$emit('open', {open: this.open})
-           }
     },
     props:['page']
 }
