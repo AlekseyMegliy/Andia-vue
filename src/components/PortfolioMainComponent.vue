@@ -15,10 +15,10 @@
             <div class="container">
                 <div class="row">
                     <span class="offset-sm-1 offset-0 col-10 portfolio-filter">
-                        <p v-on:click="(web=true, logo=true, print=true)" v-bind:class="{portfolioButtonThis: web&&logo}" >All / </p>
-                        <p v-on:click="(web=true, logo=false, print=false)" v-bind:class="{portfolioButtonThis: web&&!logo}">WEB DESIGN / </p>
-                        <p v-on:click="(web=false, logo=true, print=false)" v-bind:class="{portfolioButtonThis: logo&&!print}">LOGO DESIGN / </p>
-                        <p v-on:click="(web=false, logo=false, print=true)" v-bind:class="{portfolioButtonThis: print&&!web}">PRINT DESIGN </p>
+                        <p v-on:click="filter('all')" v-bind:class="{portfolioButtonThis: web&&logo&&print}" >All / </p>
+                        <p v-on:click="filter('web')" v-bind:class="{portfolioButtonThis: web&&!logo}">WEB DESIGN / </p>
+                        <p v-on:click="filter('logo')" v-bind:class="{portfolioButtonThis: logo&&!print}">LOGO DESIGN / </p>
+                        <p v-on:click="filter('print')" v-bind:class="{portfolioButtonThis: print&&!web}">PRINT DESIGN </p>
                     </span>
                 </div>
                 
@@ -26,7 +26,7 @@
                     <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
                         
                             <Work @zoom="zoomer"
-                                v-for="item in worksinfo"
+                                v-for="item in worksinfos"
                                 v-bind:worksinfo="item"
                                 v-bind:key="item.id"
                                 v-bind:benHref="benHref"
@@ -35,126 +35,7 @@
                                 :print="print"  />
                         
                         
-                        <!-- <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
-                                <div>
-                                    <img v-on:click="(zoom=1)" class="col-12" src="../assets/img/portfolio/work1.jpg">
-                                    <h4>Lorem WEBSITE</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work"  v-if="logo">
-                                <div>
-                                    <img v-on:click="(zoom=2)" class="col-12" src="../assets/img/portfolio/work2.jpg">
-                                    <h4>ipsum LOGO</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>  
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
-                                <div>
-                                    <img v-on:click="(zoom=3)" class="col-12" src="../assets/img/portfolio/work3.jpg">
-                                    <h4>dolor PRINT</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
-                                <div>
-                                    <img v-on:click="(zoom=4)" class="col-12" src="../assets/img/portfolio/work4.jpg">
-                                    <h4>sit WEBSITE</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
-                                <div>
-                                    <img  v-on:click="(zoom=5)" class="col-12" src="../assets/img/portfolio/work5.jpg">
-                                    <h4>amet logo</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
-                                <div>
-                                    <img v-on:click="(zoom=6)" class="col-12" src="../assets/img/portfolio/work6.jpg">
-                                    <h4>consectetur print</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>  
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
-                                <div>
-                                    <img v-on:click="(zoom=7)" class="col-12" src="../assets/img/portfolio/work7.jpg">
-                                    <h4>adipisicing WEBSITE</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
-                                <div>
-                                    <img v-on:click="(zoom=8)" class="col-12" src="../assets/img/portfolio/work8.jpg">
-                                    <h4>elit logo</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
-                                <div>
-                                    <img v-on:click="(zoom=9)" class="col-12" src="../assets/img/portfolio/work9.jpg">
-                                    <h4>Perspiciatis WEBSITE</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="logo">
-                                <div>
-                                    <img v-on:click="(zoom=10)" class="col-12" src="../assets/img/portfolio/work10.jpg">
-                                    <h4>eius logo</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>  
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="print">
-                                <div>
-                                    <img v-on:click="(zoom=11)" class="col-12" src="../assets/img/portfolio/work11.jpg">
-                                    <h4>eum print</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                                
-                                </div>
-                            </div>
-                        </transition>
-                        <transition  name="filter">
-                            <div class="col-sm-12 col-md-3 portf-work" v-if="web">
-                                <div>
-                                    <img v-on:click="(zoom=12)" class="col-12" src="../assets/img/portfolio/work12.jpg">
-                                    <h4>Lorem WEBSITE</h4>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                                
-                                </div>
-                            </div>
-                        </transition> -->
+                        
                     </div>
 
                     <transition  name="filter-zoom">
@@ -311,14 +192,39 @@ export default{
             logo: true,
             print: true,
             benHref: false, 
-            worksinfo: jsonData.worksinfo
-
-
+            worksinfos: jsonData.worksinfo
+            
         }
     },
     methods: {
         zoomer(data){
             this.zoom = data.zoom
+        },
+        filter(value){
+            function select(types){
+                if(value === 'all'){
+                    return types.type;
+                } else{
+                return types.type === value}
+            }
+            this.worksinfos= Object.values(jsonData.worksinfo).filter(select)
+            if(value==='web'){
+                this.web=true;
+                this.logo = false;
+                this.print = false;
+            }else if(value==='logo'){
+                this.web=false;
+                this.logo = true;
+                this.print = false;
+            }else if(value==='print'){
+                this.web=false;
+                this.logo = false;
+                this.print = true;
+            } else{
+                this.web=true;
+                this.logo = true;
+                this.print = true;
+            }
         }
     },
     components: {Work},

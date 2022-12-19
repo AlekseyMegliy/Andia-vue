@@ -1,8 +1,8 @@
 <template>
     <transition  name="filter">
-    <div class="col-sm-12 col-md-3 latest" v-if=worksinfo.type>
+    <div class="col-sm-12 col-md-3 latest" v-if="worksinfo.type">
         <div>
-            <p>{{worksinfo.type}}</p>
+            
             <img v-on:click=" this.$emit('zoom', {zoom:  worksinfo.id})" class="col-12" :src="require(`../assets/img/portfolio/work${worksinfo.id}.jpg`)">
             <h4>{{worksinfo.header}}</h4>
             <p>{{worksinfo.mainText}} </p>
