@@ -30,9 +30,7 @@
                                 v-bind:worksinfo="item"
                                 v-bind:key="item.id"
                                 v-bind:benHref="benHref"
-                                :web ="web"
-                                :logo="logo"
-                                :print="print"  />
+                                v-bind:limit="12" />
                         
                         
                         

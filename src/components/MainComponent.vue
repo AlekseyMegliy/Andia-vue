@@ -74,11 +74,12 @@
             <div class="row col-sm-12 col-md-10">
 
                 <Work @zoom="zoomer"
-                    
+                   
                     v-for="item in worksinfo"
                     v-bind:worksinfo="item"
                     v-bind:key="item.id"
-                    v-bind:benHref="benHref"  />
+                    v-bind:benHref="benHref" 
+                    v-bind:limit="4" />
                 <!-- <div class="col-sm-12 col-md-3 latest">
                     <div>
                         <img class="col-12" src="../assets/img/slider/1.jpg">

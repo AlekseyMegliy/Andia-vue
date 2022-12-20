@@ -1,6 +1,6 @@
 <template>
     <transition  name="filter">
-    <div class="col-sm-12 col-md-3 latest" v-if="worksinfo.type">
+    <div class="col-sm-12 col-md-3 latest" v-if="worksinfo.id<= limit">
         <div>
             
             <img v-on:click=" this.$emit('zoom', {zoom:  worksinfo.id})" class="col-12" :src="require(`../assets/img/portfolio/work${worksinfo.id}.jpg`)">
@@ -15,7 +15,7 @@
 
 <script>
     export default{
-        props:['worksinfo', 'benHref', 'web', 'logo', 'print'],
+        props:['worksinfo', 'benHref', 'limit'],
         data() {
             return {
                 zoom:0,
