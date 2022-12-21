@@ -1,5 +1,5 @@
 <template>
-    <transition  name="filter">
+ 
     <div class="col-sm-12 col-md-3 latest" v-if="worksinfo.id<= limit">
         <div>
             
@@ -10,7 +10,7 @@
             <router-link  v-if="benHref"  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
         </div>
     </div>
-    </transition>
+   
 </template>
 
 <script>

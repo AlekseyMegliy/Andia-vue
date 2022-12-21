@@ -81,54 +81,14 @@
                     v-bind:benHref="benHref" 
                     v-bind:limit="4" />
                 
-                <transition  name="zoom">
-                    <div class="col-8 zoom"  v-if="(zoom==1)">
-                        <img  class="col-12" src="../assets/img/slider/1.jpg">
-                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>        
-                    
-                </transition>
-
-                <transition  name="zoom">
-                    <div class="col-8 zoom" v-if="(zoom==2)">
-                        <img  class="col-12" src="../assets/img/slider/2.jpg">
-                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-
-                <transition  name="zoom">
-                    <div class="col-8 zoom"  v-if="(zoom==3)">
-                        <img  class="col-12" src="../assets/img/slider/3.jpg">
-                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-
-                <transition  name="zoom">
-                    <div class="col-8 zoom" v-if="(zoom==4)">
-                        <img  class="col-12" src="../assets/img/slider/4.jpg">
-                        <span class=" col-1 remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
+                <WorkZoom 
+                    @zoom="zoomer"
+                    v-for="item in worksinfo"
+                    v-bind:worksinfo="item"
+                    v-bind:key="item.id"
+                    :zooms="zoom"
+                /> 
+                
                 <div v-bind:class="{backdrop: zoom}" ></div>
             </div>
             <span class="col-sm-5 col-md-1 "></span>
@@ -200,6 +160,7 @@
 <script >
 import Benefit from "@/components/BenefitComponent.vue";
 import Work from "@/components/WorksComponent.vue"
+import WorkZoom from "@/components/WorksZoomComponent.vue"
 import jsonData from '../../jsoninform.json' 
 export default{
     props: ['isOpen'],
@@ -211,15 +172,9 @@ export default{
         benHref: true, 
         benefitInfos:jsonData.benefitInfos,
         worksinfo: jsonData.worksinfo
-        // worksinfo: [
-        //     {id:1, type: 'web', header: 'BEAUTIFUL WEBSITES', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.'}
-            // {id:2, imgSrc: 'layout', header: 'RESPONSIVE LAYOUT', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            // {id:3, imgSrc: 'awesome', header: 'AWESOME LOGOS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'},
-            // {id:4, imgSrc: 'print', header: 'HIGH RES PRINTS', mainText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...'}
-        // ]
         }
     },
-    components: {Benefit, Work},
+    components: {Benefit, Work, WorkZoom},
     methods:{
         right(){
             if(this.sm_imgs != 4){
@@ -637,20 +592,6 @@ export default{
 .block-latest .row{
     justify-content: center;
 }
-
-.block-latest .zoom{
-    position: fixed;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: black 0px 0px 5px 0px;
-    z-index: 5;
-    text-align: end;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-}
 .backdrop {
   position: fixed;
   left: 0;
@@ -661,38 +602,6 @@ export default{
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-
-.block-latest .remove-zoom svg{
-    padding: 0;
-    margin: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: black 0px 0px 1px 0px;
-    fill: #454545;
-    cursor: pointer;
-}
-.block-latest .remove-zoom svg:hover{
-    fill: #00000086;
-}
-.block-latest .remove-zoom rect:first-of-type{
-    transform: rotate(45deg) translate(-20%,-36%);
-    
-}
-.block-latest .remove-zoom rect:last-of-type{
-    transform:translate(140%, 14%) rotate(135deg) ;
-}
-
-.zoom-enter-active, .zoom-leave-active {
-
-transition: width ease-in-out 0.7s;
-
-}
-.zoom-enter-from, .zoom-leave-to  {
-width: 20%;
-
-}
-
 .block-testimonials{
     margin-top: 50px;
     border-top: rgba(0, 0, 0, 0.144) 2px dotted;

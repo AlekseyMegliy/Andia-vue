@@ -23,155 +23,22 @@
                 </div>
                 
                     
-                    <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
-                        
-                            <Work @zoom="zoomer"
-                                v-for="item in worksinfos"
-                                v-bind:worksinfo="item"
-                                v-bind:key="item.id"
-                                v-bind:benHref="benHref"
-                                v-bind:limit="12" />
-                        
-                        
-                        
-                    </div>
-
-                    <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom"  v-if="(zoom==1)">
-                        <img  class="col-12" src="../assets/img/portfolio/work1.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>        
+                <div class="row offset-sm-0 offset-md-1 col-sm-12 col-md-10">
+                    <Work @zoom="zoomer"
+                        v-for="item in worksinfos"
+                        v-bind:worksinfo="item"
+                        v-bind:key="item.id"
+                        v-bind:benHref="benHref"
+                        v-bind:limit="12" />
+                </div>
                     
-                </transition>
-
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==2)">
-                        <img  class="col-12" src="../assets/img/portfolio/work2.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom"  v-if="(zoom==3)">
-                        <img  class="col-12" src="../assets/img/portfolio/work3.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==4)">
-                        <img  class="col-12" src="../assets/img/portfolio/work4.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==5)">
-                        <img  class="col-12" src="../assets/img/portfolio/work5.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==6)">
-                        <img  class="col-12" src="../assets/img/portfolio/work6.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==7)">
-                        <img  class="col-12" src="../assets/img/portfolio/work7.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==8)">
-                        <img  class="col-12" src="../assets/img/portfolio/work8.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==9)">
-                        <img  class="col-12" src="../assets/img/portfolio/work9.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==10)">
-                        <img  class="col-12" src="../assets/img/portfolio/work10.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==11)">
-                        <img  class="col-12" src="../assets/img/portfolio/work11.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
-                <transition  name="filter-zoom">
-                    <div class="col-8 filter-zoom" v-if="(zoom==12)">
-                        <img  class="col-12" src="../assets/img/portfolio/work12.jpg">
-                        <span class=" col-1 filter-remove-zoom" v-on:click="zoom=0">
-                            <svg>
-                                <rect x="10" y="6" width="17" height="3"/>
-                                <rect x="10" y="6" width="17" height="3"/>
-                            </svg>
-                        </span>
-                    </div>  
-                </transition>
+                <WorkZoom 
+                    @zoom="zoomer"
+                    v-for="item in worksinfos"
+                    v-bind:worksinfo="item"
+                    v-bind:key="item.id"
+                    :zooms="zoom"
+                /> 
                 <div v-bind:class="{backdrop: zoom}" ></div>
             </div>
         </div>
@@ -180,6 +47,7 @@
 
 <script>
 import Work from "@/components/WorksComponent.vue"
+import WorkZoom from "./WorksZoomComponent.vue"
 import jsonData from '../../jsoninform.json' 
 export default{
     
@@ -225,7 +93,7 @@ export default{
             }
         }
     },
-    components: {Work},
+    components: {Work, WorkZoom},
 }
 </script>
 
@@ -311,51 +179,5 @@ export default{
 }
 .portfolio .portfolio-filter p:hover{
     color: #9d426b;
-}
-
-.portfolio .filter-zoom{
-    position: fixed;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: black 0px 0px 5px 0px;
-    z-index: 5;
-    text-align: end;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    
-}
-
-
-.portfolio .filter-remove-zoom svg{
-    padding: 0;
-    margin: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: black 0px 0px 1px 0px;
-    fill: #454545;
-    cursor: pointer;
-}
-.portfolio .filter-remove-zoom svg:hover{
-    fill: #00000086;
-}
-.portfolio .filter-remove-zoom rect:first-of-type{
-    transform: rotate(45deg) translate(-20%,-36%);
-    
-}
-.portfolio .filter-remove-zoom rect:last-of-type{
-    transform:translate(140%, 14%) rotate(135deg) ;
-}
-
-.filter-zoom-enter-active, .filter-zoom-leave-active {
-
-transition: width ease-in-out 0.7s;
-
-}
-.filter-zoom-enter-from, .filter-zoom-leave-to  {
-width: 20%;
-
 }
 </style>

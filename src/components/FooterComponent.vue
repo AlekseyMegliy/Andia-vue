@@ -48,7 +48,7 @@
         </div>
         <div class="container copyright">
             <div class="row">
-                <p class="col-sm-6 col-mg-7 col-lg-4 ">Copyright 2012 Andia - All rights reserved. Template by Azmind.</p>
+                <p class="col-sm-6  ">Copyright 2012 Andia - All rights reserved. Template by Azmind.</p>
                 <span class="col-sm-5 col-md-4 col-lg-3">
                     <a href="#"><img alt="Em" class="col-sm-1" src="../assets/img/social-icons/email.png"></a>
                     <a href="#"><img alt="Fb" class="col-sm-1" src="../assets/img/social-icons/facebook.png"></a>
@@ -122,8 +122,11 @@ export default {
 }
 .copyright span{
     text-align: end;
-    margin: 10px 0 10px 0;
+    margin: 10px 90px 10px 0;
     overflow: hidden;
+}
+.copyright a{
+    margin: 5px;
 }
 .copyright img{
     margin-top: -30px;

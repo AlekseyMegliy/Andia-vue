@@ -60,69 +60,11 @@
         <div class="row">
             
             <div class="row col-sm-12  offset-sm-0 offset-md-1  col-md-10">
-                <div class="col-sm-12 col-md-3 teammate">
-                    <div class="inTeam">
-                        <img alt="John Doe" class="col-12" src="@/assets/img/team/team1.jpg" >
-                        <h4>JOHN DOE</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <div class="row">
-                            <span >
-                                <a class="col-2" alt="Em" href="#"><img src="@/assets/img/social-icons/email.png"></a>
-                                <a class="col-2" alt="Fb" href="#"><img src="@/assets/img/social-icons/facebook.png"></a>
-                                <a class="col-2" alt="Sk" href="#"><img src="@/assets/img/social-icons/skype.png"></a>
-                                <a class="col-2" alt="Tw" href="#"><img src="@/assets/img/social-icons/twitter.png"></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-sm-12 col-md-3 teammate">
-                    <div class="inTeam">
-                        <img alt="Always Hurry" class="col-12" src="@/assets/img/team/team2.jpg" >
-                        <h4>Always hurry</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <div class="row">
-                            <span >
-                                <a class="col-2" alt="Em" href="#"><img src="@/assets/img/social-icons/email.png"></a>
-                                <a class="col-2" alt="Fb" href="#"><img src="@/assets/img/social-icons/facebook.png"></a>
-                                <a class="col-2" alt="Sk" href="#"><img src="@/assets/img/social-icons/skype.png"></a>
-                                <a class="col-2" alt="Tw" href="#"><img src="@/assets/img/social-icons/twitter.png"></a>
-                            </span>
-                        </div>
-                    </div>  
-                </div>
-
-                <div class="col-sm-12 col-md-3 teammate">
-                    <div class="inTeam">
-                        <img alt="Quickly Solve" class="col-12" src="@/assets/img/team/team3.jpg" >
-                        <h4>Quickly solve</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <div class="row">
-                            <span >
-                                <a class="col-2" alt="Em" href="#"><img src="@/assets/img/social-icons/email.png"></a>
-                                <a class="col-2" alt="Fb" href="#"><img src="@/assets/img/social-icons/facebook.png"></a>
-                                <a class="col-2" alt="Sk" href="#"><img src="@/assets/img/social-icons/skype.png"></a>
-                                <a class="col-2" alt="Tw" href="#"><img src="@/assets/img/social-icons/twitter.png"></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 teammate">
-                    <div class="inTeam">
-                        <img alt="Always Tired" class="col-12" src="@/assets/img/team/team4.jpg" >
-                        <h4>Always tired</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                        <div class="row">
-                            <span >
-                                <a class="col-2" alt="Em" href="#"><img src="@/assets/img/social-icons/email.png"></a>
-                                <a class="col-2" alt="Fb" href="#"><img src="@/assets/img/social-icons/facebook.png"></a>
-                                <a class="col-2" alt="Sk" href="#"><img src="@/assets/img/social-icons/skype.png"></a>
-                                <a class="col-2" alt="Tw" href="#"><img src="@/assets/img/social-icons/twitter.png"></a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
+                <Team v-for="item in teamInfo"
+                    v-bind:teamInfo="item"
+                    v-bind:key="item.id"
+                />
             </div>
             
             
@@ -133,7 +75,16 @@
 </template>
 
 <script>
-
+    import jsonData from '../../jsoninform.json' 
+    import Team from './TeamComponent.vue'
+    export default{
+        data() {
+            return {
+                teamInfo: jsonData.teammetes
+            }
+        },
+        components: {Team}
+    }
 </script>
 
 <style>
