@@ -3,7 +3,7 @@
     <div class="container header " id="header"  v-bind:class="{buttonClick: open}">
         <div class="row">
             <router-link  to="/" class="col-3 col-sm-3 col-lg-2 offset-sm-1 offset-0 align-items-center logo">
-                <img class="col-10 col-sm-12" width="165px"  src="../assets/img/logo.png">
+                <img class="col-10 col-sm-12" alt="Andia logo" width="165px"  src="../assets/img/logo.png">
             </router-link>
             <button class="offset-4 offset-sm-6 header-button" v-on:click="open = !open" @click="this.$emit('open', {open: this.open})"> 
                 <svg>
@@ -14,27 +14,27 @@
             </button>
             <div class="col-sm-11 offset-sm-1 col-lg-5 col-xl-5 offset-lg-2 offset-xl-3 nav">
                 <router-link  to="/" v-bind:class="{current: page==1}">
-                    <img src="../assets/ico//home-sm.png">
+                    <img alt="Home" src="../assets/ico//home-sm.png">
                     <p>HOME</p>
                 </router-link>
                 <router-link  to="/portfolio" v-bind:class="{current: page==2}">
-                    <img src="../assets/ico/portfolio-sm.png">
+                    <img alt="Portfolio" src="../assets/ico/portfolio-sm.png">
                     <p>PORTFOLIO</p>
                 </router-link>
                 <router-link  to="/" v-bind:class="{current: page==3}">
-                    <img src="../assets/ico/blog-sm.png">
+                    <img alt="Blog" src="../assets/ico/blog-sm.png">
                     <p>BLOG</p>
                 </router-link>
                 <router-link  to="/services"  v-bind:class="{current: page==4}">
-                    <img src="../assets/ico/services-sm.png">
+                    <img  alt="Services" src="../assets/ico/services-sm.png">
                     <p>SERVICES</p>
                 </router-link>
-                <router-link  to="/"  v-bind:class="{current: page==5}">
-                    <img src="../assets/ico/about-sm.png">
+                <router-link  to="/about"  v-bind:class="{current: page==5}">
+                    <img alt="About" src="../assets/ico/about-sm.png">
                     <p>ABOUT</p>
                 </router-link>
                 <router-link  to="/"  v-bind:class="{current: page==6}">
-                    <img src="../assets/ico/contact-sm.png">
+                    <img alt="Contact" src="../assets/ico/contact-sm.png">
                     <p>CONTACT</p>
                 </router-link>
             </div>

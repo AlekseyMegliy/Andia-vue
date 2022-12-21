@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     
-                    <img class=" offset-sm-1 offset-0 " src="../assets/ico/portfolio.png">
+                    <img alt="Portfolio icon" class=" offset-sm-1 offset-0 " src="../assets/ico/portfolio.png">
                     <p class=" offset-0" >Portfolio / </p> 
                     <p class=" plate-italic offset-sm-1 offset-lg-0 ">Here is the work we've done so far</p>
                 </div>
@@ -258,7 +258,7 @@ export default{
 .plate .plate-italic{
     font-style: italic;
     padding: 0;
-    width: 30%;
+    width: 50%;
     font-weight:normal;
     font-size: 17px;
     margin-top:auto;
@@ -311,76 +311,6 @@ export default{
 }
 .portfolio .portfolio-filter p:hover{
     color: #9d426b;
-}
-
-.portf-work{
-    text-align: center;
-}
-.portf-work div{
-    background-color: rgba(0, 0, 0, 0.049);
-    padding-bottom: 15px;
-    border-bottom: #9d426b solid 3px;
-    box-shadow: inset black 0px 0px 20px -20px;
-    transition: box-shadow 0.3s linear, opacity 0.3s linear ;
-    margin-bottom: 15px;
-}
-
-.portf-work h4{
-    text-transform: uppercase;
-    font-size: 1em;
-    letter-spacing:-1px;
-    opacity: 0.8;
-    padding-top: 15px;
-    
-}
-.portf-work p{
-    font-size: 0.8em;
-    opacity: 0.9;
-    font-style: italic;
-    text-overflow: ellipsis;
-    padding: 0 5px;
-}
-.portf-work img{
-   cursor: pointer; 
-}
-
-.portf-work div:hover{
-    opacity: 0.7;
-    box-shadow: inset black 0px 0px 25px -15px;
-}
-@media all and (max-width:1200px ){
-    .portf-work h4{
-        font-size: 1em;
-    }
-}
-@media all and (max-width:991px ){
-    .portf-work h4{
-        font-size: 0.8em;
-    }
-  
-}
-@media all and (max-width:767px ){
-    .portf-work p{
-        padding: 0 15px 
-    }
-    .portf-work{
-        margin: 0;
-    }
-    .portf-work h4{
-        font-size: 1em;
-   }
-   
-}
-
-.filter-enter-active, .filter-leave-active {
-height: 100px;
-transition: width linear 0.5s,
-opacity  linear 0.5s;
-
-}
-.filter-enter-from, .filter-leave-to  {
-width: 1%;
-opacity: 0;
 }
 
 .portfolio .filter-zoom{

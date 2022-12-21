@@ -1,16 +1,16 @@
 <template>
     <div>
         <div class="plate">    
-        <div class="container">
-            <div class="row">
-                
-                <img class=" offset-sm-1 offset-0 " src="@/assets/ico/services.png">
-                <p class=" offset-0" >Services / </p> 
-                <p class=" plate-italic offset-sm-1 offset-lg-0 ">Here are the services we offer</p>
-            </div>
+            <div class="container">
+                <div class="row">
+                    
+                    <img alt="Services icon" class=" offset-sm-1 offset-0 " src="@/assets/ico/services.png">
+                    <p class=" offset-0" >Services / </p> 
+                    <p class=" plate-italic offset-sm-1 offset-lg-0 ">Here are the services we offer</p>
+                </div>
 
+            </div>
         </div>
-    </div>
     <div class="container services">
         <div class="row top-description">
             <div class="col-sm-12 col-md-10 offset-sm-0 offset-md-1 ">
@@ -34,38 +34,6 @@
                 v-bind:key="item.id"
                 v-bind:benHref="benHref"
                 ></Benefit>
-
-                <!-- <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="ico/eye.png">
-                        <h4>BEAUTIFUL WEBSITES</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="ico/layout.png">
-                        <h4>RESPONSIVE LAYOUT</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                    </div>  
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="ico/awesome.png">
-                        <h4>AWESOME LOGOS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 benefits">
-                    <div>
-                        <img class="col-2 col-sm-1 col-md-4 col-lg-3" src="ico/print.png">
-                        <h4>HIGH RES PRINTS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. Praesentium quae cum, non incidunt voluptas et...</p>
-                    </div>
-                </div> -->
             </div>
     
         </div>

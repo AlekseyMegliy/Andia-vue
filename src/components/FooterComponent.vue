@@ -16,29 +16,29 @@
                     </div>
                     <div class="col-sm-12 col-md-3 footer">
                         <h4>our team</h4>
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
-                        <img class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
+                        <img alt="Team" class="col-sm-1 col-md-4 col-lg-3" src="../assets/img/testimonials/1.jpg">
                     </div>
                     <div class="col-sm-12 col-md-3 footer contact">
                         <h4>CONTACT US</h4>
                         <div>
-                            <img class="col-md-2 col-lg-1" src="../assets/ico/gps.png" width="20px">
+                            <img alt="Gps" class="col-md-2 col-lg-1" src="../assets/ico/gps.png" width="20px">
                             <p class="col-9 col-lg-10"> Address: Lorem city, Ipsum street, 123 </p>
                         </div>
                         <div>
-                            <img class="col-md-2 col-lg-1" src="../assets/ico/phone.png" width="20px">
+                            <img alt="Phone" class="col-md-2 col-lg-1" src="../assets/ico/phone.png" width="20px">
                             <p class="col-9 col-lg-10">Phone: 123456789012 </p>
                         </div>
                         <div>
-                            <img class="col-md-2 col-lg-1" src="../assets/ico/about-sm.png">
+                            <img alt="About" class="col-md-2 col-lg-1" src="../assets/ico/about-sm.png">
                             <p class="col-9 col-lg-10">Skype: Lorem_ipsum</p>
                         </div>
                         <div>
-                            <img class="col-md-2 col-lg-1" src="../assets/ico/contact-sm.png">
+                            <img alt="Contact" class="col-md-2 col-lg-1" src="../assets/ico/contact-sm.png">
                             <p class="col-9 col-lg-10">Email: quas_sunt_culpa.com </p>
                         </div>
                     </div>
@@ -50,10 +50,10 @@
             <div class="row">
                 <p class="col-sm-6 col-mg-7 col-lg-4 ">Copyright 2012 Andia - All rights reserved. Template by Azmind.</p>
                 <span class="col-sm-5 col-md-4 col-lg-3">
-                    <a href="#"><img class="col-sm-1" src="../assets/img/social-icons/email.png"></a>
-                    <a href="#"><img class="col-sm-1" src="../assets/img/social-icons/facebook.png"></a>
-                    <a href="#"><img class="col-sm-1" src="../assets/img/social-icons/skype.png"></a>
-                    <a href="#"><img class="col-sm-1" src="../assets/img/social-icons/twitter.png"></a>
+                    <a href="#"><img alt="Em" class="col-sm-1" src="../assets/img/social-icons/email.png"></a>
+                    <a href="#"><img alt="Fb" class="col-sm-1" src="../assets/img/social-icons/facebook.png"></a>
+                    <a href="#"><img alt="Sk" class="col-sm-1" src="../assets/img/social-icons/skype.png"></a>
+                    <a href="#"><img alt="Tw" class="col-sm-1" src="../assets/img/social-icons/twitter.png"></a>
                 </span>
             </div>
         </div>

@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-3 latest" v-if="worksinfo.id<= limit">
         <div>
             
-            <img v-on:click=" this.$emit('zoom', {zoom:  worksinfo.id})" class="col-12" :src="require(`../assets/img/portfolio/work${worksinfo.id}.jpg`)">
+            <img v-bind:alt="worksinfo.header" v-on:click=" this.$emit('zoom', {zoom:  worksinfo.id})" class="col-12" :src="require(`../assets/img/portfolio/work${worksinfo.id}.jpg`)">
             <h4>{{worksinfo.header}}</h4>
             <p>{{worksinfo.mainText}} </p>
             <a v-if="benHref" v-on:click=" this.$emit('zoom', {zoom:  worksinfo.id})"><img class="col-10" src="../assets/ico/zoom2.png"></a>
@@ -80,5 +80,27 @@
 .latest div:hover{
     opacity: 0.7;
     box-shadow: inset black 0px 0px 25px -15px;
+}
+@media all and (max-width:1200px ){
+    .latest h4{
+        font-size: 1em;
+    }
+}
+@media all and (max-width:991px ){
+    .latest h4{
+        font-size: 0.8em;
+    }
+
+}
+@media all and (max-width:767px ){
+    .latest div{
+        margin-bottom: 15px;
+    }
+    .latest{
+        margin: 0;
+    }
+    .latest h4{
+        font-size: 1em;
+   }
 }
 </style>

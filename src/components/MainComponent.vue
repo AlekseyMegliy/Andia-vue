@@ -11,25 +11,25 @@
 
 
                         <transition  name="slider">
-                            <img class="col-12 big-img"  v-if="sm_imgs==1" src="../assets/img/slider/1.jpg">
+                            <img alt="Slide 1" class="col-12 big-img"  v-if="sm_imgs==1" src="../assets/img/slider/1.jpg">
                         </transition>
                         <p class=" slider-text " v-if="sm_imgs==1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime et obcaecati, illo porro ex provident nisi ipsam cupiditate quo! Quam, impedit veniam commodi dolores </p>
 
 
                         <transition  name="slider">
-                            <img class="col-12 big-img" v-if="sm_imgs==2" src="../assets/img/slider/2.jpg">
+                            <img alt="Slide 2" class="col-12 big-img" v-if="sm_imgs==2" src="../assets/img/slider/2.jpg">
                         </transition>
                         <p class=" slider-text " v-if="sm_imgs==2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste magnam eum suscipit accusantium explicabo illum voluptatibus nisi pariatur deleniti, ipsa  </p>
 
 
                         <transition  name="slider">
-                            <img class="col-12 big-img" v-if="sm_imgs==3" src="../assets/img/slider/3.jpg">
+                            <img alt="Slide 3" class="col-12 big-img" v-if="sm_imgs==3" src="../assets/img/slider/3.jpg">
                         </transition>
                         <p class=" slider-text " v-if="sm_imgs==3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod eveniet aspernatur repellendus minus error voluptatum nostrum velit, cupiditate architecto adipisci dolorem </p>
 
 
                         <transition  name="slider">
-                            <img class="col-12 big-img " v-if="sm_imgs==4" src="../assets/img/slider/4.jpg">
+                            <img alt="Slide 4" class="col-12 big-img " v-if="sm_imgs==4" src="../assets/img/slider/4.jpg">
                         </transition>
                         <p class=" slider-text  " v-if="sm_imgs==4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus spernatur repellendus minus error voluptatum nostrum velit, cupiditate architecto </p>
 
@@ -37,10 +37,10 @@
                         <span class="slider-button-right" v-bind:class="{sliderButtinOpen: isOpen}" v-on:click="right"></span>
                     </div>
                     <div class="col-12 sm-imgs " id="sm-imgs">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=1" v-bind:class="{sliderThisSimg: sm_imgs==1}" src="../assets/img/slider/1.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=2" v-bind:class="{sliderThisSimg: sm_imgs==2}" src="../assets/img/slider/2.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=3" v-bind:class="{sliderThisSimg: sm_imgs==3}" src="../assets/img/slider/3.jpg">
-                        <img class="col-3 sm-img" v-on:click="sm_imgs=4" v-bind:class="{sliderThisSimg: sm_imgs==4}" src="../assets/img/slider/4.jpg">
+                        <img alt="Slide 1" class="col-3 sm-img" v-on:click="sm_imgs=1" v-bind:class="{sliderThisSimg: sm_imgs==1}" src="../assets/img/slider/1.jpg">
+                        <img alt="Slide 2" class="col-3 sm-img" v-on:click="sm_imgs=2" v-bind:class="{sliderThisSimg: sm_imgs==2}" src="../assets/img/slider/2.jpg">
+                        <img alt="Slide 3" class="col-3 sm-img" v-on:click="sm_imgs=3" v-bind:class="{sliderThisSimg: sm_imgs==3}" src="../assets/img/slider/3.jpg">
+                        <img alt="Slide 4" class="col-3 sm-img" v-on:click="sm_imgs=4" v-bind:class="{sliderThisSimg: sm_imgs==4}" src="../assets/img/slider/4.jpg">
                     </div>
                 </div>
             </div>
@@ -80,46 +80,7 @@
                     v-bind:key="item.id"
                     v-bind:benHref="benHref" 
                     v-bind:limit="4" />
-                <!-- <div class="col-sm-12 col-md-3 latest">
-                    <div>
-                        <img class="col-12" src="../assets/img/slider/1.jpg">
-                        <h4>BEAUTIFUL WEBSITES</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a v-on:click="(zoom=1)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
-                    </div>
-                </div> -->
                 
-
-                <!-- <div class="col-sm-12 col-md-3 latest">
-                    <div>
-                        <img class="col-12" src="../assets/img/slider/2.jpg">
-                        <h4>RESPONSIVE LAYOUT</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a v-on:click="(zoom=2)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 latest">
-                    <div>
-                        <img class="col-12" src="../assets/img/slider/3.jpg">
-                        <h4>AWESOME LOGOS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum. </p>
-                        <a v-on:click="(zoom=3)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-3 latest">
-                    <div>
-                        <img class="col-12" src="../assets/img/slider/4.jpg">
-                        <h4>HIGH RES PRINTS</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eius eum.</p>
-                        <a v-on:click="(zoom=4)"><img class="col-10" src="../assets/ico/zoom2.png"></a>
-                        <router-link  to="/portfolio"><img class="col-10" src="../assets/ico/link2.png"></router-link>
-                    </div>
-                </div> -->
                 <transition  name="zoom">
                     <div class="col-8 zoom"  v-if="(zoom==1)">
                         <img  class="col-12" src="../assets/img/slider/1.jpg">
@@ -182,7 +143,7 @@
             <span class="col-1"></span>
             <div class="testimonial testimonial-one col-9" v-if="testim==1">
 
-                <img class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+                <img alt="Testimonial 1" class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae possimus tempora ab obcaecati fuga atque esse! Similique illum, tempora, hic cumque vitae debitis delectus, molestiae cupiditate praesentium illo ea eligendi."</p>
@@ -193,7 +154,7 @@
 
             <div class="testimonial testimonial-two  col-9" v-if="testim==2">
 
-                <img class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+                <img alt="Testimonial 2" class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, in rem? Molestias perferendis veritatis, eos perspiciatis, natus esse nihil molestiae a ipsam quo odit facere quis praesentium, porro iste doloribus?"</p>
@@ -204,7 +165,7 @@
 
             <div class="testimonial testimonial-three col-9" v-if="testim==3">
 
-                <img class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
+                <img alt="Testimonial 3" class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita neque modi voluptatem. Molestiae, ex quod voluptates aliquam et, distinctio dignissimos, omnis qui repudiandae quaerat quos repellat sunt!"</p>
@@ -215,7 +176,7 @@
 
             <div class="testimonial testimonial-four col-9" v-if="testim==4">
 
-                <img class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
+                <img alt="Testimonial 4" class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
 
                 <span class="col-sm-8 col-md-9 col-lg-10">
                     <p class="response">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem commodi cumque eos non quas sunt culpa nostrum, obcaecati, recusandae dolorum ipsam accusamus nisi alias quo laborum nam fugit aspernatur est."</p>
@@ -676,57 +637,6 @@ export default{
 .block-latest .row{
     justify-content: center;
 }
-.latest{
-    text-align: center;
-}
-.latest div{
-    background-color: rgba(0, 0, 0, 0.049);
-    padding-bottom: 15px;
-    border-bottom: #9d426b solid 3px;
-    box-shadow: inset black 0px 0px 20px -20px;
-    transition: box-shadow 0.3s linear ;
-}
-
-.latest h4{
-    text-transform: uppercase;
-    font-size: 1em;
-    letter-spacing:-1px;
-    opacity: 0.8;
-    padding-top: 15px;
-
-}
-.latest p{
-    font-size: 0.9em;
-    opacity: 0.9;
-    font-style: italic;
-    text-overflow: ellipsis;
-    padding: 0 5px 0 5px;
-}
-.latest a{
-    text-decoration: none;
-    background-color:#9d426b;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    margin: 0 3px;
-    cursor: pointer;
-    transition:background-color linear 0.2s ;
-}
-.latest a:hover{
-    background-color:rgba(0, 0, 0, 0.632);
-}
-.latest a img{
-    filter: invert(100%);
-  -webkit-filter:invert(100%);
-}
-.latest div:hover{
-    opacity: 0.7;
-    box-shadow: inset black 0px 0px 25px -15px;
-}
 
 .block-latest .zoom{
     position: fixed;
@@ -780,29 +690,6 @@ transition: width ease-in-out 0.7s;
 }
 .zoom-enter-from, .zoom-leave-to  {
 width: 20%;
-
-}
-@media all and (max-width:1200px ){
-    .latest h4{
-        font-size: 1em;
-    }
-}
-@media all and (max-width:991px ){
-    .latest h4{
-        font-size: 0.8em;
-    }
-
-}
-@media all and (max-width:767px ){
-    .latest div{
-        margin-bottom: 15px;
-    }
-    .latest{
-        margin: 0;
-    }
-    .latest h4{
-        font-size: 1em;
-   }
 
 }
 
