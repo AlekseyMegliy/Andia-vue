@@ -33,7 +33,7 @@
                     <img alt="About" src="../assets/ico/about-sm.png">
                     <p>ABOUT</p>
                 </router-link>
-                <router-link  to="/"  v-bind:class="{current: page==6}">
+                <router-link  to="/contact"  v-bind:class="{current: page==6}">
                     <img alt="Contact" src="../assets/ico/contact-sm.png">
                     <p>CONTACT</p>
                 </router-link>

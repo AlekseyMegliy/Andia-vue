@@ -70,7 +70,66 @@
             
         </div>
     </div>
-    
+    <div class="container block-testimonials">
+        <div class="h1">
+            <h1>Testimonials</h1>
+        </div>
+        <div class="row">
+            <span class="col-1"></span>
+            <div class="testimonial testimonial-one col-9" v-if="testim==1">
+
+                <img alt="Testimonial 1" class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+
+                <span class="col-sm-8 col-md-9 col-lg-10">
+                    <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae possimus tempora ab obcaecati fuga atque esse! Similique illum, tempora, hic cumque vitae debitis delectus, molestiae cupiditate praesentium illo ea eligendi."</p>
+                    <p class="mail">sit_ame_consectetur.com</p>
+                </span>
+
+            </div>
+
+            <div class="testimonial testimonial-two  col-9" v-if="testim==2">
+
+                <img alt="Testimonial 2" class="col-2 col-md-1" src="../assets/img/testimonials/1.jpg">
+
+                <span class="col-sm-8 col-md-9 col-lg-10">
+                    <p class="response">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, in rem? Molestias perferendis veritatis, eos perspiciatis, natus esse nihil molestiae a ipsam quo odit facere quis praesentium, porro iste doloribus?"</p>
+                    <p class="mail">perferendis_veritati.ua</p>
+                </span>
+
+            </div>
+
+            <div class="testimonial testimonial-three col-9" v-if="testim==3">
+
+                <img alt="Testimonial 3" class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
+
+                <span class="col-sm-8 col-md-9 col-lg-10">
+                    <p class="response">"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis expedita neque modi voluptatem. Molestiae, ex quod voluptates aliquam et, distinctio dignissimos, omnis qui repudiandae quaerat quos repellat sunt!"</p>
+                    <p class="mail">expedita_neque_modi.uk</p>
+                </span>
+
+            </div>
+
+            <div class="testimonial testimonial-four col-9" v-if="testim==4">
+
+                <img alt="Testimonial 4" class="col-2 col-md-1" src="../assets/img/testimonials/3.png">
+
+                <span class="col-sm-8 col-md-9 col-lg-10">
+                    <p class="response">"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem commodi cumque eos non quas sunt culpa nostrum, obcaecati, recusandae dolorum ipsam accusamus nisi alias quo laborum nam fugit aspernatur est."</p>
+                    <p class="mail">quas_sunt_culpa.com</p>
+                </span>
+
+            </div>
+        </div>
+        <div class="testimonial-buttons row">
+            <div class="testimonial-buttons col-3">
+                <input class="col-1 buttons " v-on:click="testim=1" v-bind:class="{buttonsthis: testim==1}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=2" v-bind:class="{buttonsthis: testim==2}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=3" v-bind:class="{buttonsthis: testim==3}" type="button" id="testimonials">
+                <input class="col-1 buttons" v-on:click="testim=4" v-bind:class="{buttonsthis: testim==4}" type="button" id="testimonials">
+            </div>
+            <span class="col-2"></span>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -80,7 +139,8 @@
     export default{
         data() {
             return {
-                teamInfo: jsonData.teammetes
+                teamInfo: jsonData.teammetes,
+                testim: 1
             }
         },
         components: {Team}

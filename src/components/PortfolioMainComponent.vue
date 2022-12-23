@@ -120,13 +120,15 @@ export default{
     margin-top:auto;
     margin-bottom:auto;
     font-family: 'Lobster', cursive;
-    overflow: hidden;
-
+    
+}
+.plate-contact p{
+    width: 9%;
 }
 .plate .plate-italic{
     font-style: italic;
     padding: 0;
-    width: 50%;
+    width: 45%;
     font-weight:normal;
     font-size: 17px;
     margin-top:auto;
@@ -138,10 +140,16 @@ export default{
     .plate p{
         width: 9%;
     }
+    .plate-contact p{
+        width: 11%;
+    }
 }
 @media all and (max-width:1200px ){
     .plate p{
         width: 11%;
+    }
+    .plate-contact p{
+        width: 13%;
     }
 }
 @media all and (max-width:991px ){
@@ -150,6 +158,10 @@ export default{
     }
     .plate .plate-italic{
         width: 80%;
+        padding-left: 10px;
+    }
+    .plate-contact p{
+        width: 30%;
     }
 }
 @media all and (max-width:490px ){
@@ -158,6 +170,7 @@ export default{
     }
     .plate .plate-italic{
         width: 100%;
+        padding-left: 10px;
     }
 }
 
